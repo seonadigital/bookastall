@@ -21,7 +21,7 @@ const cities = [
   { name: "Coimbatore", count: 4, featured: false },
   { name: "Noida", count: 10, featured: false },
   { name: "Lucknow", count: 7, featured: false },
-  { name: "Chandigarh", count: 9, featured: false },
+  { name: "Chandigarh", count: 9, featured: true },
 ]
 
 export function CityGrid() {
@@ -62,9 +62,9 @@ export function CityGrid() {
                 </div>
               </div>
               <div className="absolute top-2 right-2">
-                <span className="bg-accent text-foreground text-xs px-2 py-1 rounded-full font-medium">
+              <!--  <span className="bg-accent text-foreground text-xs px-2 py-1 rounded-full font-medium">
                   Popular
-                </span>
+                </span> --!>
               </div>
             </Link>
           ))}
