@@ -21,7 +21,7 @@ const cities = [
   { name: "Coimbatore", count: 4, featured: false },
   { name: "Noida", count: 10, featured: false },
   { name: "Lucknow", count: 7, featured: false },
-  { name: "Chandigarh", count: 9, featured: true },
+  { name: "Chandigarh", count: 9, featured: false },
 ]
 
 export function CityGrid() {
