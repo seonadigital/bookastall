@@ -62,9 +62,9 @@ export function CityGrid() {
                 </div>
               </div>
               <div className="absolute top-2 right-2">
-              <!--<span className="bg-accent text-foreground text-xs px-2 py-1 rounded-full font-medium">
+                {/* <span className="bg-accent text-foreground text-xs px-2 py-1 rounded-full font-medium">
                   Popular
-                </span>--!>
+                </span> */}
               </div>
             </Link>
           ))}
