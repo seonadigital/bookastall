@@ -23,7 +23,7 @@ const helpfulLinks = [
 ]
 
 const services = [
-  { name: "Bulk Stall Booking", href: "/bulk-booking" },
+  { name: "Bulk Stall Booking", href: "#" },
   { name: "Loan for Stall", href: "/stall-loan" },
   { name: "Promote Event", href: "/promote" },
   { name: "Bulk SMS Ads", href: "/sms-ads" },
@@ -41,7 +41,7 @@ export function Footer() {
               <div className="h-10 w-10 bg-primary rounded-lg flex items-center justify-center">
                 <span className="text-primary-foreground font-bold text-lg">B</span>
               </div>
-              <span className="text-xl font-bold">BookaStall</span>
+              <span className="text-xl font-bold">Book A Stall</span>
             </Link>
             <p className="text-muted-foreground text-sm mb-4 leading-relaxed">
               Discover over 10,000+ stalls in various Lifestyle Exhibitions, Flea markets, 
