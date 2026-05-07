@@ -1,5 +1,4 @@
 import Hero from "@/components/home/Hero";
-import TrustedMarquee from "@/components/home/TrustedMarquee";
 import HowItWorks from "@/components/home/HowItWorks";
 import CityGrid from "@/components/home/CityGrid";
 import FeaturedEvents from "@/components/home/FeaturedEvents";
