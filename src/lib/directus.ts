@@ -70,12 +70,12 @@ export async function getFeaturedEvents() {
         "price_from",
         "footfall",
         "booking_status",
-        "category.id",
-        "category.name",
-        "category.slug",
-        "city.id",
-        "city.name",
-        "city.slug",
+        {
+          city: ["id", "name", "slug"],
+        },
+        {
+          category: ["id", "name", "slug"],
+        },
       ],
     })
   );
@@ -132,12 +132,12 @@ export async function getEventsByCity(citySlug: string) {
         "price_from",
         "footfall",
         "booking_status",
-        "category.id",
-        "category.name",
-        "category.slug",
-        "city.id",
-        "city.name",
-        "city.slug",
+        {
+          city: ["id", "name", "slug"],
+        },
+        {
+          category: ["id", "name", "slug"],
+        },
       ],
     })
   );

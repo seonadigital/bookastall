@@ -22,7 +22,9 @@ export async function GET(request: NextRequest) {
         "venue_name",
         "start_date",
         "price_from",
-        "city.slug",
+        {
+          city: ["slug"],
+        },
       ],
     })
   );
