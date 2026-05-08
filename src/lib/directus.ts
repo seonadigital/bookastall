@@ -5,9 +5,9 @@ import {
   createItem,
   staticToken,
 } from "@directus/sdk";
-import type { Schema, EventSubmission } from "./directus-types";
+import type { Schema, EventItem } from "./directus-types";
 
-const directusUrl = 'https://admin.bookastall.in';
+const directusUrl = "https://admin.bookastall.in";
 
 if (!directusUrl) {
   throw new Error("Missing DIRECTUS_URL or NEXT_PUBLIC_DIRECTUS_URL");
@@ -24,7 +24,15 @@ export function directusAssetUrl(file?: string | { id: string } | null) {
 
   const id = typeof file === "string" ? file : file.id;
 
-  return `${process.env.NEXT_PUBLIC_DIRECTUS_URL}/assets/${id}`;
+  return `https://admin.bookastall.in/assets/${id}`;
+}
+
+export function slugify(value: string) {
+  return value
+    .toLowerCase()
+    .trim()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/(^-|-$)/g, "");
 }
 
 export async function getCities() {
@@ -71,10 +79,10 @@ export async function getFeaturedEvents() {
         "footfall",
         "booking_status",
         {
-          city: ["id", "name", "slug"],
+          category: ["id", "name", "slug"],
         },
         {
-          category: ["id", "name", "slug"],
+          city: ["id", "name", "slug"],
         },
       ],
     })
@@ -106,6 +114,22 @@ export async function getCityBySlug(slug: string) {
   return cities[0] ?? null;
 }
 
+export async function getCityIdByName(cityName: string) {
+  const cities = await adminDirectus.request(
+    readItems("cities", {
+      filter: {
+        name: {
+          _eq: cityName,
+        },
+      },
+      limit: 1,
+      fields: ["id", "name", "slug"],
+    })
+  );
+
+  return cities[0]?.id ?? null;
+}
+
 export async function getEventsByCity(citySlug: string) {
   return publicDirectus.request(
     readItems("events", {
@@ -133,21 +157,23 @@ export async function getEventsByCity(citySlug: string) {
         "footfall",
         "booking_status",
         {
-          city: ["id", "name", "slug"],
+          category: ["id", "name", "slug"],
         },
         {
-          category: ["id", "name", "slug"],
+          city: ["id", "name", "slug"],
         },
       ],
     })
   );
 }
 
-export async function submitEvent(data: EventSubmission) {
+export async function createPendingEvent(data: Partial<EventItem>) {
   return adminDirectus.request(
-    createItem("event_submissions", {
+    createItem("events", {
       ...data,
       status: "pending_review",
+      booking_status: "Pending Review",
+      is_featured: false,
     })
   );
 }
