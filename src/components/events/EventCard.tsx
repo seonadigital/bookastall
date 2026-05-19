@@ -39,7 +39,7 @@ export default function EventCard({ event }: { event: EventItem }) {
       <div className="p-6 flex-1 flex flex-col justify-center">
         <div className="flex justify-between items-start mb-4">
           <div className="pr-4">
-            <div className="pb-4 text-sm">ID: 32432</div>
+            <div className="pb-4 text-sm">ID: {event.id}</div>
             <span className="text-xs font-bold text-blue-600 uppercase tracking-widest block mb-1">
               {category}
             </span>
@@ -87,7 +87,7 @@ export default function EventCard({ event }: { event: EventItem }) {
 
           <div className="flex gap-5 items-center">
             <Link
-              href={`/events/${typeof event.city === "object" ? event.city?.slug : "hyderabad"}/${event.slug}`}
+              href={"#"}
               className="flex gap-1 leading-none rounded-lg text-sm font-bold transition-colors"
             >
               <Phone className="h-3.5 w-3.5" />
