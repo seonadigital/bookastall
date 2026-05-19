@@ -2,7 +2,7 @@ import ListEventForm from "@/components/forms/ListEventForm";
 import { Building } from "lucide-react";
 
 export const metadata = {
-  title: "List Your Event | EventHub",
+  title: "List Your Event | Book a Stall",
 };
 
 export default function ListEventPage() {
@@ -22,7 +22,7 @@ export default function ListEventPage() {
             </h1>
             <p className="text-lg md:text-xl text-zinc-500 font-medium max-w-2xl">
               Reach thousands of verified vendors, manage your floor plan
-              digitally, and collect payments securely through EventHub.
+              digitally, and collect payments securely through Book a Stall.
             </p>
           </div>
         </div>
@@ -38,7 +38,7 @@ export default function ListEventPage() {
             <div className="sticky top-28 space-y-6">
               <div className="bg-white rounded-[2rem] border border-zinc-200 shadow-sm p-8">
                 <h3 className="text-xl font-black text-zinc-950 tracking-tight mb-6">
-                  Why host with EventHub?
+                  Why host with Book a Stall?
                 </h3>
 
                 <div className="space-y-5">

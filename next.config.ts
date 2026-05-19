@@ -5,7 +5,7 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "your-directus-domain.com",
+        hostname: "admin.bookastall.in",
       },
       {
         protocol: "https",

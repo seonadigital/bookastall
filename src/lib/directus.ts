@@ -20,7 +20,7 @@ export const adminDirectus = createDirectus<Schema>(directusUrl)
   .with(rest());
 
 export function directusAssetUrl(file?: string | { id: string } | null) {
-  if (!file) return "/placeholder-event.jpg";
+  if (!file) return "/placeholder-event.webp";
 
   const id = typeof file === "string" ? file : file.id;
 

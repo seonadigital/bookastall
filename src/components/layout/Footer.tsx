@@ -73,7 +73,7 @@ export default function Footer() {
 
         <div className="border-t border-zinc-200 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-xs text-zinc-500 font-semibold uppercase tracking-widest">
-            © 2026 EventHub Inc. All rights reserved.
+            © 2026 Book a Stall Inc. All rights reserved.
           </p>
           <div className="flex items-center gap-2 text-xs text-zinc-500 font-semibold uppercase tracking-widest">
             <span>Engineered for scale.</span>

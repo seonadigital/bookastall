@@ -10,7 +10,7 @@ export default function Navbar() {
   return (
     <nav className="sticky top-0 z-50 bg-white/90 backdrop-blur-xl border-b border-zinc-200 transition-all duration-300">
       <div className="max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-20">
+        <div className="flex justify-between items-center h-16">
           <div className="flex items-center gap-8">
             <Link href="/" className="flex items-center gap-2.5 group">
               <div className="bg-zinc-950 text-white p-2 rounded-lg group-hover:bg-blue-600 transition-colors duration-300">
@@ -42,12 +42,12 @@ export default function Navbar() {
             </Link>
             <Link
               href="/list-event"
-              className="text-sm font-semibold text-zinc-600 hover:text-zinc-950 transition-colors"
+              className="bg-zinc-950 text-white hover:bg-zinc-800 px-6 py-2.5 rounded-full text-sm font-semibold transition-all"
             >
               List an Event
             </Link>
             <div className="w-px h-5 bg-zinc-200" />
-            <Link
+            {/* <Link
               href="#"
               className="text-sm font-semibold text-zinc-600 hover:text-zinc-950 transition-colors"
             >
@@ -58,7 +58,7 @@ export default function Navbar() {
               className="bg-zinc-950 text-white hover:bg-zinc-800 px-6 py-2.5 rounded-full text-sm font-semibold transition-all"
             >
               Sign Up
-            </Link>
+            </Link> */}
           </div>
 
           <button className="md:hidden text-zinc-950 focus:outline-none">

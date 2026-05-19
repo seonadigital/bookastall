@@ -1,15 +1,19 @@
 import Link from "next/link";
 import { ChevronRight } from "lucide-react";
 import type { City } from "@/lib/directus-types";
+import { directusAssetUrl } from "@/lib/directus";
 
 export default function CityHero({ city }: { city: City }) {
   return (
-    <header className="w-full bg-white border-b border-zinc-200 relative overflow-hidden flex flex-col items-center justify-center text-center pt-24 pb-20 md:pt-32 md:pb-28">
-      <div className="absolute inset-0 bg-grid opacity-40 pointer-events-none" />
-      <div className="absolute inset-0 bg-gradient-to-t from-white via-white/80 to-transparent pointer-events-none" />
+    <header
+      style={{ backgroundImage: `url(${directusAssetUrl(city.image)})` }}
+      className="w-full bg-cover bg-center border-b border-zinc-800 relative overflow-hidden flex flex-col items-center justify-center text-center pt-24 pb-20 md:pt-32 md:pb-28 text-white"
+    >
+      <div className="absolute inset-0 bg-grid opacity-10 pointer-events-none invert" />
+      <div className="absolute inset-0 bg-gradient-to-t from-black via-black/75 to-black/40 pointer-events-none" />
 
       <div className="max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex flex-col items-center">
-        <div className="flex items-center justify-center gap-2 text-xs font-bold uppercase tracking-widest text-zinc-400 mb-6">
+        <div className="flex items-center justify-center gap-2 text-xs font-bold uppercase tracking-widest text-white-400 mb-6">
           <Link href="/" className="hover:text-zinc-950 transition-colors">
             Home
           </Link>
@@ -20,10 +24,10 @@ export default function CityHero({ city }: { city: City }) {
         </div>
 
         <div className="max-w-3xl mx-auto mb-10">
-          <h1 className="text-4xl md:text-5xl lg:text-7xl font-black text-zinc-950 tracking-tight leading-[1.1] mb-6">
+          <h1 className="text-4xl md:text-5xl lg:text-7xl font-black text-white-950 tracking-tight leading-[1.1] mb-6">
             Events in {city.name}
           </h1>
-          <p className="text-lg md:text-xl text-zinc-500 font-medium max-w-2xl mx-auto">
+          <p className="text-lg md:text-xl text-white/70 font-medium max-w-2xl mx-auto">
             {city.description ||
               `Discover premium exhibitions, flea markets, and trade shows happening across ${city.name}.`}
           </p>

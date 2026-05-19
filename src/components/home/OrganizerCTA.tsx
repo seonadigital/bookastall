@@ -9,7 +9,7 @@ export default function OrganizerCTA() {
         </h2>
         <p className="text-zinc-400 text-lg mb-10 font-medium max-w-2xl">
           Stop managing bookings on spreadsheets. List your exhibition on
-          EventHub and reach thousands of verified vendors instantly.
+          Book a Stall and reach thousands of verified vendors instantly.
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">

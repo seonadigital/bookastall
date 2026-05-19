@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { MapPin, Users } from "lucide-react";
+import { MapPin, Phone, Users } from "lucide-react";
 import type { EventItem } from "@/lib/directus-types";
 import { directusAssetUrl } from "@/lib/directus";
 
@@ -39,6 +39,7 @@ export default function EventCard({ event }: { event: EventItem }) {
       <div className="p-6 flex-1 flex flex-col justify-center">
         <div className="flex justify-between items-start mb-4">
           <div className="pr-4">
+            <div className="pb-4 text-sm">ID: 32432</div>
             <span className="text-xs font-bold text-blue-600 uppercase tracking-widest block mb-1">
               {category}
             </span>
@@ -84,12 +85,22 @@ export default function EventCard({ event }: { event: EventItem }) {
             </p>
           </div>
 
-          <Link
-            href={`/events/${typeof event.city === "object" ? event.city?.slug : "hyderabad"}/${event.slug}`}
-            className="bg-zinc-950 text-white hover:bg-blue-600 px-6 py-2.5 rounded-lg text-sm font-bold transition-colors"
-          >
-            Book Space
-          </Link>
+          <div className="flex gap-5 items-center">
+            <Link
+              href={`/events/${typeof event.city === "object" ? event.city?.slug : "hyderabad"}/${event.slug}`}
+              className="flex gap-1 leading-none rounded-lg text-sm font-bold transition-colors"
+            >
+              <Phone className="h-3.5 w-3.5" />
+              Call Organizer
+            </Link>
+
+            <Link
+              href={`/events/${typeof event.city === "object" ? event.city?.slug : "hyderabad"}/${event.slug}`}
+              className="bg-zinc-950 text-white hover:bg-blue-600 px-6 py-2.5 rounded-lg text-sm font-bold transition-colors"
+            >
+              More Details
+            </Link>
+          </div>
         </div>
       </div>
     </div>

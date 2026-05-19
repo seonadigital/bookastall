@@ -10,7 +10,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "EventHub | Premium Event & Stall Booking",
+  title: "Book a Stall | Premium Event & Stall Booking",
   description:
     "Find exhibitions, flea markets, and trade shows. Book stalls with interactive digital floor plans.",
 };
